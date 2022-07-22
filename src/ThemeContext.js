@@ -1,5 +1,5 @@
 import React,{ Component} from "react"
-const {Provider,Consumer}=React.createContext()
+const ThemeContext=React.createContext()
 
 class ThemeContextProvider extends Component{
 
@@ -15,13 +15,13 @@ class ThemeContextProvider extends Component{
     }
     render(){
         return(
-           <Provider value={{theme:this.state.theme , togglerTheme:this.togglerTheme}}>
+           <ThemeContext.Provider value={{theme:this.state.theme , togglerTheme:this.togglerTheme}}>
              {this.props.children}
-           </Provider> 
+           </ThemeContext.Provider> 
         )
     }
 }
-export  {ThemeContextProvider ,Consumer as ThemeContextConsumer}
+export  {ThemeContextProvider , ThemeContext}
 
 
 // function ThemeContextProvider(props){

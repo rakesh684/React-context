@@ -1,19 +1,16 @@
-import React  from "react"
+import React, { useContext }  from "react"
 import './App.css';
 import Header from "./Header"
 import Button from "./Button"
-import { ThemeContextConsumer} from "./ThemeContext"
+import { ThemeContext} from "./ThemeContext"
 
 export default function App() {
- 
+ const {theme,togglerTheme}=useContext(ThemeContext)
   return (
     <div>
          <Header />
-         <ThemeContextConsumer>
-           {theme=>(
-            <Button theme={theme.theme} togglerTheme={theme.togglerTheme}/>
-           )}
-        </ThemeContextConsumer>
+         <Button theme={theme} togglerTheme={togglerTheme}/>
+      
          
     </div>
 )
